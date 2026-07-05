@@ -1,0 +1,48 @@
+Retrieval-Augmented Generation (RAG) Overview
+
+Retrieval-Augmented Generation (RAG) is an AI framework that combines information retrieval with text generation. It enhances large language models by providing them with relevant external knowledge retrieved from a knowledge base before generating a response.
+
+Key Components of RAG:
+
+1. Retrieval
+Retrieval is the process of finding the most relevant pieces of information from a document collection. It typically works by converting text into vector embeddings using embedding models, then performing similarity search to find the closest matches to a user's query. Common techniques include dense passage retrieval and sparse retrieval methods like BM25.
+
+2. Augmentation
+Augmentation refers to adding the retrieved information as context to the prompt sent to the language model. This provides the model with up-to-date, domain-specific, or private information that it may not have been trained on.
+
+3. Generation
+Generation is the final step where a language model produces a natural language answer conditioned on both the user's question and the retrieved context. This ensures answers are grounded in actual data rather than relying solely on the model's parametric knowledge.
+
+Benefits of RAG:
+- Improves factual accuracy by grounding answers in retrieved documents
+- Enables question answering over private or proprietary data
+- Reduces hallucinations by providing relevant context
+- Allows knowledge base updates without retraining the model
+- Provides transparency by citing source documents
+
+Common Use Cases:
+- Enterprise knowledge bases and documentation search
+- Customer support chatbots with access to product manuals
+- Academic research assistants that can query papers
+- Legal document analysis and contract review
+- Healthcare information systems with medical literature
+
+Chunking Strategies:
+Documents are typically split into smaller chunks before embedding. Common strategies include:
+- Fixed-size chunking with overlap
+- Recursive character text splitting
+- Semantic chunking based on document structure
+- Sentence-based splitting
+
+Embedding Models:
+Text embeddings convert chunks into dense vector representations. Popular models include OpenAI's text-embedding-ada-002, sentence-transformers like all-MiniLM-L6-v2, and open-source models like BGE and Instructor.
+
+Vector Databases:
+Vector stores enable efficient similarity search over embeddings. Popular options include Chroma, FAISS, Pinecone, Weaviate, and Qdrant.
+
+Advanced RAG Techniques:
+- Hybrid search combining keyword and vector search
+- Re-ranking retrieved results for better relevance
+- Query rewriting and expansion
+- Multi-hop retrieval for complex questions
+- Self-querying retrievers that use structured filtering
